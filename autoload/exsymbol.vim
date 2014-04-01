@@ -53,6 +53,8 @@ function exsymbol#init_buffer()
 endfunction
 
 function exsymbol#open_window()
+    call ex#window#goto_edit_window()
+
     let winnr = bufwinnr(s:title)
     if winnr == -1
         call ex#window#open( 
