@@ -39,17 +39,24 @@ function exsymbol#toggle_help()
     call s:update_help_text()
     silent call append ( 0, s:help_text )
     silent keepjumps normal! gg
+    call ex#hl#clear_confirm()
 endfunction
 
 " exsymbol#open_window {{{2
 
 function exsymbol#init_buffer()
     set filetype=exsymbol
+    au! BufWinLeave <buffer> call <SID>on_close()
 
     if ( line('$') <= 1 )
         silent call append ( 0, s:help_text )
         silent exec '$d'
     endif
+endfunction
+
+function s:on_close()
+    let s:zoom_in = 0
+    let s:help_open = 0
 endfunction
 
 function exsymbol#open_window()
