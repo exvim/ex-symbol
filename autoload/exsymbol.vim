@@ -10,6 +10,7 @@ let s:help_text_short = [
             \ '',
             \ ]
 let s:help_text = s:help_text_short
+let s:symbols_file = './symbols'
 " }}}
 
 " functions {{{1
@@ -132,9 +133,14 @@ function exsymbol#confirm_select()
     exec 'ts ' . word
 endfunction
 
+" exsymbol#set_file {{{2
+function exsymbol#set_file( path )
+    let s:symbols_file = a:path
+endfunction
+
 " exsymbol#read_symbols {{{2
 function exsymbol#list_all()
-    let symbols_file = g:exvim_folder . '/symbols'
+    let symbols_file = s:symbols_file
     if findfile(symbols_file) == ''
         call ex#warning( 'Can not find symbol file: ' . symbols_file )
         return
