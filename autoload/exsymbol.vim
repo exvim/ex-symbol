@@ -35,6 +35,10 @@ function s:update_help_text()
 endfunction
 
 function exsymbol#toggle_help()
+    if !g:ex_symbol_enable_help
+        return
+    endif
+
     let s:help_open = !s:help_open
     silent exec '1,' . len(s:help_text) . 'd _'
     call s:update_help_text()
@@ -49,7 +53,7 @@ function exsymbol#init_buffer()
     set filetype=exsymbol
     au! BufWinLeave <buffer> call <SID>on_close()
 
-    if ( line('$') <= 1 )
+    if line('$') <= 1 && g:ex_symbol_enable_help
         silent call append ( 0, s:help_text )
         silent exec '$d'
     endif
@@ -153,9 +157,13 @@ function exsymbol#list_all()
     silent exec '1,$d _'
 
     " add online help 
-    silent call append ( 0, s:help_text )
-    silent exec '$d'
-    let start_line = len(s:help_text)
+    if g:ex_symbol_enable_help
+        silent call append ( 0, s:help_text )
+        silent exec '$d'
+        let start_line = len(s:help_text)
+    else
+        let start_line = 1
+    endif
 
     " read symbol files
     let symbols = readfile(symbols_file)
@@ -176,7 +184,11 @@ function exsymbol#filter( pattern, reverse )
         return
     endif
 
-    let start_line = len(s:help_text)+1
+    if g:ex_symbol_enable_help
+        let start_line = len(s:help_text)+1
+    else
+        let start_line = 2
+    endif
     let range = start_line.',$'
 
     " if reverse search, we first filter out not pattern line, then then filter pattern

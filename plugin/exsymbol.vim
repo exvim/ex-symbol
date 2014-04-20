@@ -12,6 +12,10 @@ if !exists('g:ex_symbol_winpos')
     let g:ex_symbol_winpos = 'right'
 endif
 
+if !exists('g:ex_symbol_enable_help')
+    let g:ex_symbol_enable_help = 1
+endif
+
 "}}}
 
 " commands {{{1
