@@ -38,4 +38,6 @@ call exsymbol#register_hotkey( 8 , '<leader>r'       , ":exec 'Filter ' . @/<CR>
 call exsymbol#register_hotkey( 9 , '<leader>d'       , ":exec 'ReverseFilter ' . @/<CR>"            , 'Reverse filter search result.' )
 "}}}
 
+call ex#register_plugin( 'exsymbol', { 'actions': ['autoclose'] } )
+
 " vim:ts=4:sw=4:sts=4 et fdm=marker:
