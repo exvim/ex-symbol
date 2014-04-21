@@ -19,7 +19,7 @@ endif
 "}}}
 
 " commands {{{1
-command! -n=1 -complete=customlist,ex#compl_by_symbol Symbol call exsymbol#list('<args>')
+command! -n=1 -complete=customlist,ex#compl_by_symbol SList call exsymbol#list('<args>')
 command! EXSymbolCWord call exsymbol#list(expand('<cword>'))
 
 command! EXSymbolToggle call exsymbol#toggle_window()
