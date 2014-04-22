@@ -134,7 +134,7 @@ function exsymbol#confirm_select()
     exec 'redraw!'
 
     " tag select
-    exec 'ts ' . word
+    exec g:ex_symbol_select_cmd . ' ' . word
 endfunction
 
 " exsymbol#set_file {{{2

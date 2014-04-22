@@ -16,6 +16,10 @@ if !exists('g:ex_symbol_enable_help')
     let g:ex_symbol_enable_help = 1
 endif
 
+if !exists('g:ex_symbol_select_cmd')
+    let g:ex_symbol_select_cmd = 'ts'
+endif
+
 "}}}
 
 " commands {{{1
