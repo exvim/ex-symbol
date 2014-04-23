@@ -137,18 +137,6 @@ function exsymbol#confirm_select()
     exec g:ex_symbol_select_cmd . ' ' . word
 endfunction
 
-" exsymbol#open_and_search {{{2
-function exsymbol#open_and_search()
-    if findfile(s:symbols_file) == ''
-        call ex#warning( 'Can not find symbol file: ' . s:symbols_file )
-        return
-    endif
-
-    call exsymbol#list_all()
-    exec 'redraw'
-    normal /
-endfunction
-
 " exsymbol#set_file {{{2
 function exsymbol#set_file( path )
     let s:symbols_file = a:path

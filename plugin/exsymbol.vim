@@ -30,7 +30,6 @@ command! EXSymbolToggle call exsymbol#toggle_window()
 command! EXSymbolOpen call exsymbol#open_window()
 command! EXSymbolClose call exsymbol#close_window()
 command! EXSymbolList call exsymbol#list_all()
-command! EXSymbolOpenAndSearch call exsymbol#open_and_search()
 "}}}
 
 " default key mappings {{{1
