@@ -62,6 +62,9 @@ endfunction
 function s:on_close()
     let s:zoom_in = 0
     let s:help_open = 0
+
+    " go back to edit buffer
+    call ex#window#goto_edit_window()
 endfunction
 
 function exsymbol#open_window()
