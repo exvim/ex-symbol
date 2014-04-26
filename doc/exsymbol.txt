@@ -1,4 +1,4 @@
-*exsymbol.txt*    Global search plugin for vim.
+*exsymbol.txt*    Symbol list plugin for vim.
 
 Author:         Johnny Wu <karasaya@gmail.com>
 Licence:        MIT licence
