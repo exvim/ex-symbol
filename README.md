@@ -1,6 +1,9 @@
 # Intro
 
-Symbol list for tags used in your project.
+ex-symbol is a Vim plugin which can list all tag names in the plugin window for 
+search and jump.
+
+ex-symbol is also a part of [exVim](https://github.com/exvim/main) project
 
 ## Requirements
 
@@ -9,7 +12,14 @@ Symbol list for tags used in your project.
 
 ## Installation
 
-This plugin follows the standard runtime path structure, and as such it can 
+### Install ex-utility
+
+ex-symbol is written based on [exvim/ex-utility](https://github.com/exvim/ex-utility). This 
+is the basic library of ex-vim-plugins. Follow the readme file in ex-utility to install it first.
+
+### Install ex-symbol
+
+ex-symbol follows the standard runtime path structure, and as such it can 
 be installed with a variety of plugin managers:
     
 To install using [Vundle](https://github.com/gmarik/vundle):
