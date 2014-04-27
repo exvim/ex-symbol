@@ -3,7 +3,7 @@
 ex-symbol is a Vim plugin which can list all tag names in the plugin window for 
 search and jump.
 
-ex-symbol is also a part of [exVim](https://github.com/exvim/main) project
+ex-symbol is also a part of [exVim](https://github.com/exvim/main) project.
 
 ## Requirements
 
