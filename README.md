@@ -1,3 +1,15 @@
+- - -
+- [Intro](#intro)
+- [Requirements](#requirements)
+- [Installation](#installation)
+  - [Install ex-utility](#install-ex-utility)
+  - [Install ex-symbol](#install-ex-symbol)
+- [Usage](#usage)
+
+For more details, check [exVim's Docs: Tags and Symbols](http://exvim.github.io/docs/tags-and-symbols)
+
+- - -
+
 # Intro
 
 ex-symbol is a Vim plugin which can list all tag names in the plugin window for 
