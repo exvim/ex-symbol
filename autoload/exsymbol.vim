@@ -20,8 +20,8 @@ function exsymbol#bind_mappings()
 endfunction
 
 " exsymbol#register_hotkey {{{2
-function exsymbol#register_hotkey( priority, key, action, desc )
-    call ex#keymap#register( s:keymap, a:priority, a:key, a:action, a:desc )
+function exsymbol#register_hotkey( priority, local, key, action, desc )
+    call ex#keymap#register( s:keymap, a:priority, a:local, a:key, a:action, a:desc )
 endfunction
 
 " exsymbol#toggle_help {{{2

@@ -33,13 +33,13 @@ command! EXSymbolList call exsymbol#list_all()
 "}}}
 
 " default key mappings {{{1
-call exsymbol#register_hotkey( 1 , '<F1>'            , ":call exsymbol#toggle_help()<CR>"           , 'Toggle help.' )
-call exsymbol#register_hotkey( 2 , '<ESC>'           , ":EXSymbolClose<CR>"                         , 'Close window.' )
-call exsymbol#register_hotkey( 3 , '<Space>'         , ":call exsymbol#toggle_zoom()<CR>"           , 'Zoom in/out project window.' )
-call exsymbol#register_hotkey( 4 , '<CR>'            , ":call exsymbol#confirm_select()<CR>"        , 'Go to the symbol define.' )
-call exsymbol#register_hotkey( 5 , '<2-LeftMouse>'   , ":call exsymbol#confirm_select()<CR>"        , 'Go to the symbol define.' )
-call exsymbol#register_hotkey( 8 , '<leader>r'       , ":exec 'Filter ' . @/<CR>"                   , 'Filter search result.' )
-call exsymbol#register_hotkey( 9 , '<leader>d'       , ":exec 'ReverseFilter ' . @/<CR>"            , 'Reverse filter search result.' )
+call exsymbol#register_hotkey( 1 , 1, '<F1>'            , ":call exsymbol#toggle_help()<CR>"           , 'Toggle help.' )
+call exsymbol#register_hotkey( 2 , 1, '<ESC>'           , ":EXSymbolClose<CR>"                         , 'Close window.' )
+call exsymbol#register_hotkey( 3 , 1, '<Space>'         , ":call exsymbol#toggle_zoom()<CR>"           , 'Zoom in/out project window.' )
+call exsymbol#register_hotkey( 4 , 1, '<CR>'            , ":call exsymbol#confirm_select()<CR>"        , 'Go to the symbol define.' )
+call exsymbol#register_hotkey( 5 , 1, '<2-LeftMouse>'   , ":call exsymbol#confirm_select()<CR>"        , 'Go to the symbol define.' )
+call exsymbol#register_hotkey( 8 , 1, '<leader>r'       , ":exec 'Filter ' . @/<CR>"                   , 'Filter search result.' )
+call exsymbol#register_hotkey( 9 , 1, '<leader>d'       , ":exec 'ReverseFilter ' . @/<CR>"            , 'Reverse filter search result.' )
 "}}}
 
 call ex#register_plugin( 'exsymbol', { 'actions': ['autoclose'] } )
