@@ -34,7 +34,11 @@ command! EXSymbolList call exsymbol#list_all()
 
 " default key mappings {{{1
 call exsymbol#register_hotkey( 1 , 1, '<F1>'            , ":call exsymbol#toggle_help()<CR>"           , 'Toggle help.' )
-call exsymbol#register_hotkey( 2 , 1, '<ESC>'           , ":EXSymbolClose<CR>"                         , 'Close window.' )
+if has('gui_running')
+    call exsymbol#register_hotkey( 2 , 1, '<ESC>'           , ":EXSymbolClose<CR>"                         , 'Close window.' )
+else
+    call exsymbol#register_hotkey( 2 , 1, '<leader><ESC>'   , ":EXSymbolClose<CR>"                         , 'Close window.' )
+endif
 call exsymbol#register_hotkey( 3 , 1, '<Space>'         , ":call exsymbol#toggle_zoom()<CR>"           , 'Zoom in/out project window.' )
 call exsymbol#register_hotkey( 4 , 1, '<CR>'            , ":call exsymbol#confirm_select()<CR>"        , 'Go to the symbol define.' )
 call exsymbol#register_hotkey( 5 , 1, '<2-LeftMouse>'   , ":call exsymbol#confirm_select()<CR>"        , 'Go to the symbol define.' )
