@@ -80,7 +80,7 @@ function exsymbol#open_window()
                     \ s:title, 
                     \ g:ex_symbol_winsize,
                     \ g:ex_symbol_winpos,
-                    \ 1,
+                    \ 0,
                     \ 1,
                     \ function('exsymbol#init_buffer')
                     \ )
