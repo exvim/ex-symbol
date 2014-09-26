@@ -148,8 +148,8 @@ endfunction
 " exsymbol#read_symbols {{{2
 function exsymbol#list_all()
     if findfile(s:symbols_file) == ''
-        call ex#warning( 'Can not find symbol file: ' . s:symbols_file )
-        return
+        call ex#warning( 'Can not find symbol file: ' . s:symbols_file . '. try :Update to generate it.' )
+        return 0
     endif
 
     " open the symbol window
@@ -170,11 +170,16 @@ function exsymbol#list_all()
     " read symbol files
     let symbols = readfile(s:symbols_file)
     call append( start_line, symbols )
+
+    return 1
 endfunction
 
 " exsymbol#list {{{2
 function exsymbol#list( pattern )
-    call exsymbol#list_all()
+    if exsymbol#list_all() == 0
+        return
+    endif
+
     call exsymbol#filter(a:pattern,0)
 endfunction
 
