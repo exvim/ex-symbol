@@ -51,7 +51,9 @@ endfunction
 
 function exsymbol#init_buffer()
     set filetype=exsymbol
-    au! BufWinLeave <buffer> call <SID>on_close()
+    augroup exsymbol
+        au! BufWinLeave <buffer> call <SID>on_close()
+    augroup END
 
     if line('$') <= 1 && g:ex_symbol_enable_help
         silent call append ( 0, s:help_text )
